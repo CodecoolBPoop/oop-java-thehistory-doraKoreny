@@ -12,6 +12,16 @@ public class TheHistoryArray implements TheHistory {
     @Override
     public void add(String text) {
         //TODO: check the TheHistory interface for more information
+        String[] textArray = text.split(" ");
+
+        int newArrayLength = wordsArray.length + textArray.length;
+        String[] newArray = new String[newArrayLength];
+
+        System.arraycopy(wordsArray, 0, newArray, 0, wordsArray.length);
+        System.arraycopy(textArray,0, newArray, wordsArray.length, textArray.length);
+
+        wordsArray = newArray;
+
     }
 
     @Override
