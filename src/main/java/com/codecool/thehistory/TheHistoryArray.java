@@ -27,6 +27,23 @@ public class TheHistoryArray implements TheHistory {
     @Override
     public void removeWord(String wordToBeRemoved) {
         //TODO: check the TheHistory interface for more information
+        int occuranceCounter = 0;
+        int j = 0;
+        for(String item : wordsArray) {
+            if (item.equals(wordToBeRemoved)) {
+                occuranceCounter ++;
+            }
+        }
+        System.out.println(occuranceCounter);
+
+        String[] newArray = new String[wordsArray.length-occuranceCounter];
+        for(String item : wordsArray) {
+            if(! item.equals(wordToBeRemoved)) {
+                newArray[j] = item;
+                j++;
+            }
+        }
+        wordsArray = newArray;
     }
 
     @Override
