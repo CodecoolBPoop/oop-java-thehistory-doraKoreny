@@ -14,6 +14,7 @@ public class TheHistoryArrayList implements TheHistory {
     @Override
     public void add(String text) {
         //TODO: check the TheHistory interface for more information
+        wordsArrayList.add(text);
     }
 
     @Override
