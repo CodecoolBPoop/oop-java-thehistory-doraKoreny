@@ -49,7 +49,11 @@ public class TheHistoryArray implements TheHistory {
     @Override
     public int size() {
         //TODO: check the TheHistory interface for more information
-        return 0;
+        int countWords = 0;
+        for(String item : wordsArray) {
+            countWords++;
+        }
+        return countWords;
     }
 
     @Override
