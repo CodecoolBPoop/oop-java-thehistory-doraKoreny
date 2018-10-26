@@ -59,6 +59,8 @@ public class TheHistoryArray implements TheHistory {
     @Override
     public void clear() {
         //TODO: check the TheHistory interface for more information
+        String[] emptyArray = new String[0];
+        wordsArray = emptyArray;
     }
 
     @Override
