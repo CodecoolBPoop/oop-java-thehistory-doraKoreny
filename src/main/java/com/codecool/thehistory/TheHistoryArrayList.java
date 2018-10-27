@@ -38,11 +38,24 @@ public class TheHistoryArrayList implements TheHistory {
     @Override
     public void clear() {
         //TODO: check the TheHistory interface for more information
+        wordsArrayList.clear();
     }
 
     @Override
     public void replaceOneWord(String from, String to) {
         //TODO: check the TheHistory interface for more information
+        for(int i=0;i<wordsArrayList.size();i++) {
+            if(wordsArrayList.get(i).equals(from)) {
+                wordsArrayList.set(i,to);
+            }
+        }
+        /*Iterator itr = wordsArrayList.iterator();
+        while (itr.hasNext()) {
+            Object element = itr.next();
+            if (element.equals(from)) {
+                wordsArrayList.set(to);
+            }
+        }*/
     }
 
     @Override
