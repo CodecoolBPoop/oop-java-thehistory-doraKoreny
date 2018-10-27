@@ -11,8 +11,7 @@ public class TheHistoryArrayList implements TheHistory {
     @Override
     public void add(String text) {
         //TODO: check the TheHistory interface for more information
-        List<String> splitText = new ArrayList<>();
-        splitText = Arrays.asList(text.split(" "));
+        List<String> splitText = Arrays.asList(text.split(" "));
 
         wordsArrayList.addAll(splitText);
     }
@@ -20,9 +19,12 @@ public class TheHistoryArrayList implements TheHistory {
     @Override
     public void removeWord(String wordToBeRemoved) {
         //TODO: check the TheHistory interface for more information
-        for(int i=0; i<wordsArrayList.size(); i++) {
-            if (wordsArrayList.get(i).equals(wordToBeRemoved)) {
-                wordsArrayList.remove(i);
+        Iterator itr = wordsArrayList.iterator();
+
+        while(itr.hasNext()) {
+            Object element = itr.next();
+            if(element.equals(wordToBeRemoved)) {
+                itr.remove();
             }
         }
     }
@@ -30,7 +32,7 @@ public class TheHistoryArrayList implements TheHistory {
     @Override
     public int size() {
         //TODO: check the TheHistory interface for more information
-        return 0;
+        return wordsArrayList.size();
     }
 
     @Override
