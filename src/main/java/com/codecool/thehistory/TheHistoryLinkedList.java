@@ -19,6 +19,14 @@ public class TheHistoryLinkedList implements TheHistory {
     @Override
     public void removeWord(String wordToBeRemoved) {
         //TODO: check the TheHistory interface for more information
+        Iterator itr = wordsLinkedList.iterator();
+
+        while (itr.hasNext()) {
+            Object element = itr.next();
+            if(element.equals(wordToBeRemoved)) {
+                itr.remove();
+            }
+        }
     }
 
     @Override
